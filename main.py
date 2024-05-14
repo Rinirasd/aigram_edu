@@ -1,11 +1,18 @@
 import asyncio
+import os
 
+import dotenv
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters.command import Command
 from aiogram.types import FSInputFile
+
 from app.handlers import router
 
-bot = Bot(token='6183062996:AAFubx8HNGPZ0Eu0AgcKTM71KQfDu6knSis')
+
+dotenv.load_dotenv()
+
+
+bot = Bot(token= os.getenv("TOKEN"))
 dp = Dispatcher()
 
 
