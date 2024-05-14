@@ -1,5 +1,6 @@
 import asyncio
 
+import app.keyboards as kb
 from aiogram import Bot, types, F, Router
 from aiogram.filters.command import Command
 from aiogram.types import FSInputFile
@@ -10,7 +11,7 @@ router = Router()
 
 @router.message(Command("start"))
 async def cmd_start(message: types.Message)-> None:
-    await message.answer("Привет это я ")
+    await message.reply("Привет это я ", reply_markup=kb.main)
 
 
 @router.message(Command("hello"))
